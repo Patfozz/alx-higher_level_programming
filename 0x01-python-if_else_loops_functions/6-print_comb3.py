@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-for i in range(0, 100):
-    for s in range(9):
-        if  i == s or s == i:
-            print("{:02d}".format(i,s), end=", ")
+for num in range(0, 90):
+        if num % 10 > num / 10:
+                if num != 89:
+                        print("{:02d}, ".format(num), end='')
+                else:
+                        print("{:02d}".format(num))
