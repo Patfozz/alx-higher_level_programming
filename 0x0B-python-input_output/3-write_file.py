@@ -1,19 +1,18 @@
 #!/usr/bin/python3
-""" Module that contains a function that writes to a text file
-"""
+'''
+defines write_file function
+'''
 
 
-def write_file(filename="", text=""):
-    """ Function that writes to a text file
+def write_file(filename='', text=''):
+    '''writes a string to a text file
 
     Args:
-        filename: filename
-        text: text to write
+        filename (str): name of file
+        text (str): text to be written to file
 
-    Raises
-        Exception: when the file can be opened
-
-    """
-
-    with open(filename, 'w', encoding="utf-8") as f:
+    Return:
+        returns the number of characters written
+    '''
+    with open(filename, 'w') as f:
         return f.write(text)
