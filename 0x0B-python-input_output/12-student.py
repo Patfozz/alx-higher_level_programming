@@ -1,34 +1,32 @@
 #!/usr/bin/python3
-'''
-Defines a class Student
-'''
+""" Module that defines the class Student
+"""
 
 
 class Student:
-    '''Student class
-
-
-    '''
+    """ Class to create student instances """
 
     def __init__(self, first_name, last_name, age):
-        '''Initializes a Student object
-
-        Attributes:
-            first_name (str): first name of Student
-            last_name (str): last name of Student
-            age (int): age of Student
-        '''
+        """ Special method to initialize """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        '''Retrieves a dictionary representation of instance
+        """ Method that returns directory description """
+        obj = self.__dict__.copy()
+        if type(attrs) is list:
 
-        '''
-        if attrs and \
-           isinstance(attrs, list) is True and\
-           all(isinstance(x, str) for x in attrs) is True:
-            return {key: self.__dict__[key]
-                    for key in attrs if key in self.__dict__}
-        return self.__dict__
+            for item in attrs:
+                if type(item) is not str:
+                    return obj
+
+            d_list = {}
+
+            for iatr in range(len(attrs)):
+                for satr in obj:
+                    if attrs[iatr] == satr:
+                        d_list[satr] = obj[satr]
+            return d_list
+
+        return obj

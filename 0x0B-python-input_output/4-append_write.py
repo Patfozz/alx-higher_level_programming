@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-'''
-Defines the append_write function
-'''
+""" Module that contains a function that appends to a text file
+"""
 
 
-def append_write(filename='', text=''):
-    '''writes a string to the end of a text file
+def append_write(filename="", text=""):
+    """ Function that appends to a text file
 
     Args:
-        filename (str): name of file
-        text (str): text to be written to file
+        filename: filename
+        text: text to write
 
-    Return:
-        returns the number of characters written
-    '''
-    with open(filename, 'a') as f:
+    Raises
+        Exception: when the file can be opened
+
+    """
+
+    with open(filename, 'a', encoding="utf-8") as f:
         return f.write(text)
