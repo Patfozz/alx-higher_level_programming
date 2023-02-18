@@ -1,2 +1,1 @@
-dealing with object oriented programing 
-
+ # 0x08-python-more_classes
